@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>Dashboard Test</title>
+    <!-- Insert CSS here -->
+
+    <!-- FIXME make jquery off-line -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/highcharts.js"></script>
+
+    <script type="text/javascript">
+		
+			var chart;
+			$(document).ready(function() {
+				chart = new Highcharts.Chart({
+					chart: {
+						renderTo: 'progress-bar',
+						defaultSeriesType: 'bar'
+					},
+					title: {
+						text: 'RAL Expedition progress'
+					},
+					subtitle: {
+						text: 'Source: Wikipedia.org'
+					},
+					xAxis: {
+						categories: ['Progress'],
+						title: {
+							text: null
+						}
+					},
+					yAxis: [{
+						min: 0,
+                                                max: 90,
+						title: {
+							text: 'Time',
+							align: 'high'
+						}},
+                                                {
+						min: 0,
+                                                max: 30,
+						title: {
+							text: 'Time2',
+							align: 'high'
+						}
+					}],
+					tooltip: {
+						formatter: function() {
+							return ''+
+								 this.series.name +': '+ this.y +' millions';
+						}
+					},
+					plotOptions: {
+						bar: {
+							dataLabels: {
+								enabled: true
+							}
+						}
+					},
+					legend: {
+						layout: 'vertical',
+						align: 'right',
+						verticalAlign: 'top',
+						x: -100,
+						y: 100,
+						floating: true,
+						borderWidth: 1,
+						backgroundColor: '#FFFFFF',
+						shadow: true
+					},
+					credits: {
+						enabled: false
+					},
+				        series: [{
+						name: 'Jacek',
+						data: [31]
+					}, {
+						name: 'Asia',
+                                                yAxis:1,
+						data: [30]
+					}]
+				});
+				
+				
+			});
+				
+    </script>
+  </head>
+
+  <body>
+    <h1>RAL Expedition Dashboard</h1>
+
+    <div id="progress-bar">RAL Expedition Progress Bar</div>
+  </body>
+</html>
