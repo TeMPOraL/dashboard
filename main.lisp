@@ -2,6 +2,7 @@
 
 (ql:quickload 'cl-ppcre)
 (ql:quickload 'local-time)
+(ql:quickload 'group-by)
 
 ;;; Copied from http://chaitanyagupta.com/lisp/restarts.html#sec-4
 (defun parse-csv-file (file)
